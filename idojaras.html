@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            overflow: auto;
+        }
+        #idojaras , #valami{
+            height: 400px ; 
+            width: 300px ; 
+            border: 5px red solid;
+            display: inline-block;
+            margin-bottom: 10px;
+            
+        }
+        #idojaras{
+            margin-left: 10px;
+        }
+
+        #listaz{
+            height: 400px ; 
+            width: 620px ; 
+            border: 5px red solid;
+        }
+    </style>
+</head>
+<body>
+
+
+    <button onClick="szerver1()" >idojaras</button>
+    <button onClick="szerver2()">listaz</button>
+    <br>
+    <table>
+        <tr>
+                <div id="valami">SZIA BENCE VAGYOK 20 ÉVES PEDOFIL 2D LANYOKRA IZGOLU FIU AKINEK VAN EGY JEGYESE AKIVEL 6 ÉVE EGYUTT VANNAK XD, DE AKKOR IS SZERETEM A 2D-S KISLANYOKAT XD. eZ A PROGI KIIRJA NEKED BUDAPEST MINDEN TULAJDONSAGAT :) </div>           
+                <div id="idojaras"></div>       
+        </tr>
+        <tr>
+            <div id="listaz" ></div>
+        </tr>
+    </table>
+
+    <script>
+        function szerver1() {
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function () {
+                document.getElementById("idojaras").innerHTML = this.responseText;
+            }
+            xmlhttp.open("POST","beolvas_ment.php");
+            xmlhttp.send();
+        }
+        function szerver2() {
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function () {
+                document.getElementById("listaz").innerHTML = this.responseText;
+            }
+            xmlhttp.open("POST","listaz.php");
+            xmlhttp.send();
+        }
+    </script>
+</body>
+</html>
